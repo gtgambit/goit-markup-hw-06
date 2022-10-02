@@ -573,9 +573,20 @@ body {
   border-radius: 4px;
   background-color: var(--footer-bg-color);
   color: var(--text-color-secondary);
+  transition-property: border;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .form-subscription input:focus {
   outline: none;
+}
+
+.form-subscription input:focus,
+.form-subscription input:hover {
+  border: 1px solid var(--text-color-accent);
+  outline: none;
+  cursor: pointer;
 }
 
 .window-email-subscribe {
@@ -875,6 +886,9 @@ body {
   margin-top: 4px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+  transition-property: border;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .registration-form input:focus,
