@@ -49,86 +49,6 @@ body {
   font-size: 14px;
   margin: 0 auto;
 }
-.backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-
-  background-color: rgba(0, 0, 0, 0.2);
-  opacity: 1;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.backdrop.is-hidden {
-  opacity: 0;
-  pointer-events: none;
-}
-.modal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(1);
-
-  width: 528px;
-  height: 581px;
-
-  background-color: #fff;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
-  opacity: 1;
-
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.backdrop.is-hidden .modal {
-  transform: translate(-50%, -50%) scale(0);
-  opacity: 0;
-}
-
-.modal-closed {
-  position: absolute;
-  right: 8px;
-  top: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-
-  background-color: var(--footer-color-text-secondary);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.close-button {
-  margin-left: 498px;
-  width: 30px;
-  height: 30px;
-  background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 150px;
-  align-items: center;
-  transition-property: fill, border;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-.close-button:hover {
-  fill: var(--text-color-accent);
-  border: 1px solid var(--text-color-accent);
-}
-
-.close-icon {
-  height: 11px;
-  width: 11px;
-}
-
-.modal-closed:hover use {
-  fill: currentColor;
-}
 
 .container {
   max-width: 1200px;
@@ -167,7 +87,7 @@ body {
 }
 
 .logo-part {
-  color: var(--logo-color-secondary);
+  color: var(--text-color-primary);
 }
 
 .navigation {
@@ -384,7 +304,7 @@ body {
   font-weight: 700;
   line-height: 1.14;
   text-transform: uppercase;
-  color: #ffffff;
+  color: var(--footer-color-text-secondary);
   background: rgba(47, 48, 58, 0.8);
   width: 100%;
   height: 70px;
@@ -637,6 +557,85 @@ body {
 .social-link-footer:focus {
   background-color: var(--text-color-accent);
 }
+.wrapper-footer .form-subscription {
+  margin-left: 93px;
+}
+
+.form-subscription input {
+  width: 358px;
+  height: 50px;
+  margin: 0;
+  padding-left: 16px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  background-color: var(--footer-bg-color);
+  color: var(--text-color-secondary);
+}
+.form-subscription input:focus {
+  outline: none;
+}
+
+.window-email-subscribe {
+  display: flex;
+  align-items: center;
+}
+
+.form-subscription .subscribe-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 200px;
+  height: 50px;
+  margin-left: 12px;
+  padding-left: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 0;
+  border: none;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+
+  background-color: var(--text-color-accent);
+}
+
+.form-subscribe-info {
+  font-weight: 700;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+.btn-subscribe-name {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  color: var(--footer-color-text-secondary);
+}
+
+.subscribe-btn {
+  transition-property: color, background-color, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.subscribe-btn:hover,
+.subscribe-btn:focus {
+  background-color: #62b4f7;
+}
+
+.icon-btn-email-subscribe {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+}
 
 /* -------------------portfolio page------------------------ */
 
@@ -756,3 +755,237 @@ body {
   color: var(--text-color-secondary);
 }
 /* end */
+
+/* Modal */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+
+  width: 520px;
+  height: 581px;
+  padding: 40px;
+
+  background-color: #fff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  opacity: 1;
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+}
+
+.modal-closed {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+
+  background-color: var(--footer-color-text-secondary);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.close-button {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.close-button:hover {
+  fill: var(--text-color-accent);
+  border: 1px solid var(--text-color-accent);
+}
+
+.close-icon {
+  height: 11px;
+  width: 11px;
+}
+
+.modal-closed:hover use {
+  fill: currentColor;
+}
+
+/* Form modal*/
+.registration-form {
+}
+
+.registration-form h2 {
+  margin-bottom: 12px;
+  font-family: Roboto;
+  font-style: normal;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+
+.signup-form {
+  position: relative;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+
+  color: var(--text-color-primary);
+}
+
+.registration-form input {
+  width: 100%;
+  height: 40px;
+  padding-left: 42px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin-top: 4px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+
+.registration-form input:focus,
+.registration-form input:hover {
+  border: 1px solid var(--text-color-accent);
+  outline: none;
+  cursor: pointer;
+}
+
+.registration-form input:focus + .icon-form-svg {
+  fill: var(--text-color-accent);
+}
+
+.registration-form textarea {
+  width: 100%;
+  height: 120px;
+  padding: 12px 16px;
+  margin-top: 4px;
+  margin-bottom: 20px;
+  resize: none;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+.registration-form textarea:focus,
+.registration-form textarea:hover {
+  border: 1px solid var(--text-color-accent);
+  outline: none;
+  cursor: pointer;
+}
+
+.registration-form label:nth-child(-n + 3) {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.icon-form-wrapper {
+  position: relative;
+}
+.icon-form-wrapper .icon-form-svg {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 15px;
+  fill: var(--text-color-primary);
+}
+
+.checkbox-hidden-wrapp .checkbox-label {
+  display: flex;
+  align-items: center;
+}
+
+.icon-checkin {
+  margin-right: 7px;
+  width: 16px;
+  height: 15px;
+  border: 2px solid var(--text-color-primary);
+
+  transition-property: background-color, border;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.agree-with-contract:checked + .icon-checkin {
+  border: none;
+  background-color: var(--text-color-accent);
+}
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.78;
+  letter-spacing: 0.03em;
+}
+
+.checkbox-label .contract-link {
+  text-decoration: underline;
+  color: var(--text-color-accent);
+}
+.submit-btn {
+  width: 200px;
+  height: 50px;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 30px;
+
+  background-color: var(--text-color-accent);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: none;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  text-align: center;
+  letter-spacing: 0.06em;
+  color: var(--footer-color-text-secondary);
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.submit-btn:hover,
+.submit-btn:focus {
+  background-color: #71baf6;
+  outline: none;
+}
